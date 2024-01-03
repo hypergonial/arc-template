@@ -1,6 +1,6 @@
 # arc-template
 
-A template to start creating a bot using hikari-arc. To see a REST version of this template, see the [`rest` branch](https://github.com/hypergonial/arc-template/tree/rest) of this repository.
+A template to start creating a bot using hikari-arc. To see a Gateway version of this template, see the [`gateway` branch](https://github.com/hypergonial/arc-template/tree/gateway) of this repository.
 
 ## Setting up
 
