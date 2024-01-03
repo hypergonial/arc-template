@@ -1,0 +1,54 @@
+[tool.ruff]
+exclude = ["docs", "build"]
+select = [
+    "E",     # Errors
+    "F",     # Pyflakes
+    "I",     # Import sorting
+    "TCH",   # Typechecking imports
+    "N",     # Naming conventions
+    "D2",    # Docstring
+    "D3",    # Docstring
+    "D415",  # Docstring
+    "D417",  # Docstring
+    "D418",  # Docstring
+    "D419",  # Docstring
+    "ASYNC", # Async antipatterns
+    "Q",     # Quotes
+    "RSE",   # Raise quotes
+    "SIM",   # Simplicity
+    "RUF",   # Ruff-specific
+]
+ignore = [
+    "F405", # Star imports
+    "F403", # Star imports
+    "E501", # Line too long
+    "D205", # Blank line required between summary line and description
+]
+fixable = [
+    "I",   # Import sorting
+    "TCH", # Type-checking imports
+    "D",   # Docstring formatting
+]
+line-length = 120
+target-version = "py310" # CHANGE ME if using newer Python
+
+[tool.ruff.format]
+skip-magic-trailing-comma = true
+
+[tool.ruff.lint.isort]
+split-on-trailing-comma = false
+
+[tool.ruff.lint.pydocstyle]
+convention = "numpy" # Autodocstring convention
+
+# Disable mypy because it is annoying when using pyright
+[tool.mypy]
+ignore_errors = true
+
+[tool.pyright]
+pythonVersion = "3.10" # CHANGE ME if using newer Python
+# You can change this to "strict" if you want
+typeCheckingMode = "basic"
+reportUnnecessaryTypeIgnoreComment = "warning"
+reportUninitializedInstanceVariable = "error"
+reportShadowedImports = "warning"
