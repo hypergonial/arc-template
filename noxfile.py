@@ -16,7 +16,7 @@ options.sessions = ["format_fix", "pyright"]
 def format_fix(session: nox.Session) -> None:
     session.install("-U", "ruff")
     session.run("python", "-m", "ruff", "format", *SCRIPT_PATHS)
-    session.run("python", "-m", "ruff", *SCRIPT_PATHS, "--fix")
+    session.run("python", "-m", "ruff", "check", *SCRIPT_PATHS, "--fix")
 
 
 # Run me via 'nox -s format'
@@ -25,7 +25,7 @@ def format_fix(session: nox.Session) -> None:
 def format(session: nox.Session) -> None:
     session.install("-U", "ruff")
     session.run("python", "-m", "ruff", "format", *SCRIPT_PATHS, "--check")
-    session.run("python", "-m", "ruff", *SCRIPT_PATHS)
+    session.run("python", "-m", "ruff", "check", *SCRIPT_PATHS)
 
 
 # Run me via 'nox -s pyright'

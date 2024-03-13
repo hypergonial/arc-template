@@ -1,2 +1,2 @@
-hikari-arc[rest]>=1.0.0
+hikari-arc[rest]>=1.2.1
 python-dotenv~=1.0.0
