@@ -14,7 +14,7 @@ options.sessions = ["format_fix", "pyright"]
 # Format the code and fix any issues, useful for local development
 @nox.session()
 def format_fix(session: nox.Session) -> None:
-    session.install("-U", "ruff")
+    session.install("-U", "ruff", "-c", "dev_requirements.txt")
     session.run("python", "-m", "ruff", "format", *SCRIPT_PATHS)
     session.run("python", "-m", "ruff", "check", *SCRIPT_PATHS, "--fix")
 
@@ -23,7 +23,7 @@ def format_fix(session: nox.Session) -> None:
 # Checks if the code is formatted correctly, useful for CI
 @nox.session()
 def format(session: nox.Session) -> None:
-    session.install("-U", "ruff")
+    session.install("-U", "ruff", "-c", "dev_requirements.txt")
     session.run("python", "-m", "ruff", "format", *SCRIPT_PATHS, "--check")
     session.run("python", "-m", "ruff", "check", *SCRIPT_PATHS)
 
@@ -33,5 +33,5 @@ def format(session: nox.Session) -> None:
 @nox.session()
 def pyright(session: nox.Session) -> None:
     session.install("-r", "requirements.txt")
-    session.install("-U", "pyright")
+    session.install("-U", "pyright", "-c", "dev_requirements.txt")
     session.run("pyright", PATH_TO_PROJECT)
