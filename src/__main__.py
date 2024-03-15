@@ -37,7 +37,3 @@ async def hi_slash(
 
 # This must be on the last line, no code will run after this:
 bot.run()
-
-# You can run the bot by executing the following command in the terminal:
-# py -m src on Windows
-# python3 -m src on Linux or MacOS
